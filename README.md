@@ -34,6 +34,8 @@ python 04_visualize_lora.py        # fig 2 needs the outputs/ folder from script
 
 On macOS or Linux, activate with `source .venv/bin/activate`. Models and datasets download from the Hugging Face Hub on first run.
 
+Scripts 02 and 03 can be very slow on some Windows CPU setups. If script 03 doesn't print a progress line within a couple of minutes, run it on Google Colab (free T4 GPU), where it takes about a minute.
+
 ## Knobs that matter
 
 - `r`: how much the update can change. Start at 8–16. Bigger is not automatically better (see script 01). The singular-value plot in script 04 shows how many directions an adapter actually uses.

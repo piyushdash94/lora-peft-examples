@@ -126,6 +126,9 @@ for epoch in range(EPOCHS):
         opt.step()
         opt.zero_grad()
         total += loss.item()
+        step = i // BS + 1
+        if step % 5 == 0:   # progress, useful on slow CPUs
+            print(f"  epoch {epoch + 1} step {step}/{-(-len(train) // BS)} loss {loss.item():.4f}", flush=True)
     print(f"epoch {epoch + 1}: mean loss {total / (len(train) / BS):.4f}")
 
 # ---- 5. evaluate, save adapter, merge for deployment ----
